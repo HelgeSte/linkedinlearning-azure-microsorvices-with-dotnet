@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace ECommerce.Api.Customers.Interfaces
 {
-    public interface ICustomersProviderInterface
+    public interface ICustomersProvider
     {
         Task<(bool isSuccess, IEnumerable<Customer> Customers, string ErrorMessage)> GetCustomersAsync();
         Task<(bool isSuccess, Customer Customer, string ErrorMessage)> GetCustomerAsync(int id);
