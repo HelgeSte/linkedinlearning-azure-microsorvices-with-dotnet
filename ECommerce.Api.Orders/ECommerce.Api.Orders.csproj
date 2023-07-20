@@ -4,5 +4,10 @@
     <TargetFramework>netcoreapp3.1</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\ECommerce.Api.Customers\ECommerce.Api.Customers.csproj" />
+    <ProjectReference Include="..\ECommerce.Api.Products\ECommerce.Api.Products.csproj" />
+  </ItemGroup>
+
 
 </Project>
