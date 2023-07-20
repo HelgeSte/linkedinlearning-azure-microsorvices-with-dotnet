@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 namespace ECommerce.Api.Orders.Db
 {
@@ -6,7 +7,7 @@ namespace ECommerce.Api.Orders.Db
     {
         public int Id { get; set; }
         public int CustomerId { get; set; }
-        public string OrderDate { get; set; }
+        public DateTime OrderDate { get; set; }
         public decimal? Total { get; set; }
         public List<OrderItem> Items { get; set; }
     }

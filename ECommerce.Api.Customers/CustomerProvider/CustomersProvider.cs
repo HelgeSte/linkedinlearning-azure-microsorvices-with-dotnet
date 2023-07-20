@@ -32,11 +32,9 @@ namespace ECommerce.Api.Customers.CustomerProvider
         {
             if(!dbContext.Customers.Any())
             {
-                dbContext.Customers.Add(new Db.Customer() { Id = 1, Name = "Squall Leonhart", Address = "Balamb Garden" });
-                dbContext.Customers.Add(new Db.Customer() { Id = 2, Name = "Rinoa Heartily", Address = "Deling City" });
-                dbContext.Customers.Add(new Db.Customer() { Id = 3, Name = "Zell Dincht", Address = "Balamb Garden" });
-                dbContext.Customers.Add(new Db.Customer() { Id = 4, Name = "Quistis Trepe", Address = "Balamb Garden" });
-                dbContext.Customers.Add(new Db.Customer() { Id = 5, Name = "Selphie Tilmitt", Address = "Trabia Garden" });
+                dbContext.Customers.Add(new Db.Customer() { Id = 1, Name = "Jessica Smith", Address = "20 Elm St." });
+                dbContext.Customers.Add(new Db.Customer() { Id = 2, Name = "John Smith", Address = "30 Main St." });
+                dbContext.Customers.Add(new Db.Customer() { Id = 3, Name = "William Johnson", Address = "100 10th St." });
                 dbContext.SaveChanges();
             }
         }

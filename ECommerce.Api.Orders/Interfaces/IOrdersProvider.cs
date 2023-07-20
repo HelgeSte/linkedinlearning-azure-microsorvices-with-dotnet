@@ -7,7 +7,6 @@ namespace ECommerce.Api.Orders.Interfaces
 {
     public interface IOrdersProvider
     {
-        Task<(bool isSuccess, IEnumerable<Order> orders, string ErrorMessage)> GetOrdersAsync();
-        Task<(bool isSuccess, Order order, string ErrorMessage)> GetOrderAsync(int id);
+        Task<(bool isSuccess, IEnumerable<Order> orders, string ErrorMessage)> GetOrdersAsync(int customerId);
     }
 }

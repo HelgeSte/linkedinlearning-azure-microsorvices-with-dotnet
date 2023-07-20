@@ -7,6 +7,7 @@ using Microsoft.Extensions.Logging;
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 
 namespace ECommerce.Api.Orders.Providers
@@ -27,16 +28,61 @@ namespace ECommerce.Api.Orders.Providers
 
         private void SeedData()
         {
-            dbContext.Add(new Order() { Id = 1, CustomerId = 2, Items = null, Total = 0 });
-            dbContext.Add(new Order() { Id = 2, CustomerId = 1, Items = null, Total = 0 });
-            dbContext.Add(new Order() { Id = 3, CustomerId = 4, Items = null, Total = 0 });
+            if (!dbContext.Orders.Any())
+            {
+
+                dbContext.Orders.Add(new Order()
+                {
+                    Id = 1,
+                    CustomerId = 1,
+                    OrderDate = DateTime.Now,
+                    Items = new List<OrderItem>()
+                    {
+                        new OrderItem() { OrderId = 1, ProductId = 1, Quantity = 10, UnitPrice = 10 },
+                        new OrderItem() { OrderId = 1, ProductId = 2, Quantity = 10, UnitPrice = 10 },
+                        new OrderItem() { OrderId = 1, ProductId = 3, Quantity = 10, UnitPrice = 10 },
+                        new OrderItem() { OrderId = 2, ProductId = 2, Quantity = 10, UnitPrice = 10 },
+                        new OrderItem() { OrderId = 3, ProductId = 3, Quantity = 1, UnitPrice = 100 }
+                    },
+                    Total = 100
+                });
+
+                dbContext.Orders.Add(new Order() { 
+                    Id = 2, CustomerId = 1, 
+                    OrderDate = DateTime.Now,
+                    Items = new List<OrderItem>()
+                    {
+                        new OrderItem() { OrderId = 1, ProductId = 1, Quantity = 10, UnitPrice = 10 },
+                        new OrderItem() { OrderId = 1, ProductId = 2, Quantity = 10, UnitPrice = 10 },
+                        new OrderItem() { OrderId = 1, ProductId = 3, Quantity = 10, UnitPrice = 10 },
+                        new OrderItem() { OrderId = 2, ProductId = 2, Quantity = 10, UnitPrice = 10 },
+                        new OrderItem() { OrderId = 3, ProductId = 3, Quantity = 1, UnitPrice = 100 }
+                    },
+                    Total = 100 });
+
+                dbContext.Orders.Add(new Order() {
+                    Id = 3,
+                    CustomerId = 2,
+                    OrderDate = DateTime.Now,
+                    Items = new List<OrderItem>()
+                    {
+                        new OrderItem() { OrderId = 1, ProductId = 1, Quantity = 10, UnitPrice = 10 },
+                        new OrderItem() { OrderId = 2, ProductId = 2, Quantity = 10, UnitPrice = 10 },
+                        new OrderItem() { OrderId = 3, ProductId = 3, Quantity = 1, UnitPrice = 100 }
+                    },
+                    Total = 0 });
+                dbContext.SaveChanges();
+            }
         }
 
-        public async Task<(bool isSuccess, IEnumerable<Models.Order> orders, string ErrorMessage)> GetOrdersAsync()
+        public async Task<(bool isSuccess, IEnumerable<Models.Order> orders, string ErrorMessage)> GetOrdersAsync(int customerId)
         {
             try
             {
-                var orders = await dbContext.Orders.ToListAsync();
+                var orders = await dbContext.Orders
+                    .Where(c => c.CustomerId == customerId )
+                    .Include(o => o.Items)  // Include OrderItems
+                    .ToListAsync();
                 if(orders != null && orders.Any())
                 {
                     var result = mapper.Map<IEnumerable<Db.Order>, IEnumerable<Models.Order>>(orders);
@@ -50,22 +96,5 @@ namespace ECommerce.Api.Orders.Providers
             }
         }
 
-        public async Task<(bool isSuccess, Models.Order order, string ErrorMessage)> GetOrderAsync(int id)
-        {
-            try
-            {
-                var order = await dbContext.Orders.FirstOrDefaultAsync(o => o.Id == id);
-                if (order != null)
-                {
-                    var result = mapper.Map<Db.Order, Models.Order>(order);
-                    return (true, result, null);
-                }
-                return (false, null, "Not Found");
-            }
-            catch (Exception ex)
-            {
-                return (false, null, ex.Message);
-            }
-        }
     }
 }
