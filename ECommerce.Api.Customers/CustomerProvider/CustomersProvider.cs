@@ -39,6 +39,28 @@ namespace ECommerce.Api.Customers.CustomerProvider
             }
         }
 
+        public async Task<(bool isSuccess, IEnumerable<Models.Customer> Customers, string ErrorMessage)> GetCustomersAsync()
+        {
+            
+            try
+            {
+                logger?.LogInformation("Querying customers");
+                var customers = await dbContext.Customers.ToListAsync();
+                if (customers != null && customers.Any())
+                {
+                    logger?.LogInformation("Customer found");
+                    var result = mapper.Map<IEnumerable<Db.Customer>, IEnumerable<Models.Customer>>(customers);
+                    return (true, result, null);
+                }
+                return (false, null, "Not Found");
+            }
+            catch (Exception ex)
+            {
+                logger?.LogInformation(ex.ToString());
+                return (false, null, ex.Message);
+            }
+        }
+
         public async Task<(bool isSuccess, Models.Customer Customer, string ErrorMessage)> GetCustomerAsync(int id)
         {
             var Customer = await dbContext.Customers.FirstOrDefaultAsync(c => c.Id == id);
@@ -58,22 +80,5 @@ namespace ECommerce.Api.Customers.CustomerProvider
             }
         }
 
-        public async Task<(bool isSuccess, IEnumerable<Models.Customer> Customers, string ErrorMessage)> GetCustomersAsync()
-        {
-            var customers = await dbContext.Customers.ToListAsync();
-            try
-            {
-                if(customers != null && customers.Any())
-                {
-                    var result = mapper.Map<IEnumerable<Db.Customer>, IEnumerable<Models.Customer>>(customers);
-                    return (true, result, null);
-                }
-                return (false, null, "Not Found");
-            }
-            catch (Exception ex)
-            {
-                return (false, null, ex.Message);
-            }
-        }
     }
 }
