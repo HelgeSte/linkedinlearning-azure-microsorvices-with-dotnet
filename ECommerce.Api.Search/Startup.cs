@@ -1,3 +1,5 @@
+using ECommerce.Api.Search.Interfaces;
+using ECommerce.Api.Search.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
@@ -24,6 +26,11 @@ namespace ECommerce.Api.Search
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            /* Now that we've implemented this SearchService class, we need to tell the dependency injection 
+             * container that we're going to use the SearchService class as the concrete implementation of 
+             * ISearchService. This is going to be implemented right here. Services.AdScoped, ISearchService, 
+             * and the concrete implementation is SearchService. */
+            services.AddScoped<ISearchService, SearchService>();
             services.AddControllers();
         }
 
