@@ -22,3 +22,7 @@ C:\Users\helge\source\repos\LiL_AzureMicroservices\ECommerce\ECommerce.Api.Searc
 C:\Users\helge\source\repos\LiL_AzureMicroservices\ECommerce\ECommerce.Api.Search\obj\Debug\netcoreapp3.1\ECommerce.Api.Search.dll
 C:\Users\helge\source\repos\LiL_AzureMicroservices\ECommerce\ECommerce.Api.Search\obj\Debug\netcoreapp3.1\ECommerce.Api.Search.pdb
 C:\Users\helge\source\repos\LiL_AzureMicroservices\ECommerce\ECommerce.Api.Search\obj\Debug\netcoreapp3.1\ECommerce.Api.Search.genruntimeconfig.cache
+C:\Users\helge\source\repos\LiL_AzureMicroservices\ECommerce\ECommerce.Api.Search\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Http.Polly.dll
+C:\Users\helge\source\repos\LiL_AzureMicroservices\ECommerce\ECommerce.Api.Search\bin\Debug\netcoreapp3.1\Polly.dll
+C:\Users\helge\source\repos\LiL_AzureMicroservices\ECommerce\ECommerce.Api.Search\bin\Debug\netcoreapp3.1\Polly.Extensions.Http.dll
+C:\Users\helge\source\repos\LiL_AzureMicroservices\ECommerce\ECommerce.Api.Search\obj\Debug\netcoreapp3.1\ECommerce.Api.Search.csproj.CopyComplete

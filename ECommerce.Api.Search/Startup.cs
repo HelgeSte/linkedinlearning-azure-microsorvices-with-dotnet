@@ -8,6 +8,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using System;
+using Polly;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -32,11 +33,19 @@ namespace ECommerce.Api.Search
              * and the concrete implementation is SearchService. */
             services.AddScoped<ISearchService, SearchService>();
             services.AddScoped<IOrdersService, OrdersService>();
+            /* Finally, we need to specify that we're going to use the ProductsService as the concrete implementation 
+             * of the IProductsService interface. */
+            services.AddScoped<IProductsService, ProductsService>();
             // Configure the HTTP client factory object that we're going to use to communicate to the orders microservice
             services.AddHttpClient("OrdersService", config =>
             {
                 config.BaseAddress = new Uri(Configuration["Services:Orders"]); // AppSettings.json->Services->Orders
             });
+            services.AddHttpClient("ProductService", config =>
+            {
+                config.BaseAddress = new Uri(Configuration["Services:Products"]);
+            }).AddTransientHttpErrorPolicy(p => p.WaitAndRetryAsync(5, _ => TimeSpan.FromMilliseconds(500))); // Is prod-srv alive?
+            // Add code to the SearchService, so it can handle situations where the Product Service is down
             services.AddControllers();
         }
 

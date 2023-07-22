@@ -1,0 +1,10 @@
+﻿To test the result from invoking both the OrderService and ProductService in Postman:
+Post: http://localhost:11082/api/search
+Body->Raw: 
+{
+    "CustomerId":22
+}
+
+Startup all project, which is needed for testing that the microservices communicates:
+Right click solution, select "Configure Startup Projects"->"Multiple Startup Projects" and select Start
+all the microservice projects.
