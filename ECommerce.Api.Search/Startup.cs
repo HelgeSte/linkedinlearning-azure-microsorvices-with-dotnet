@@ -31,6 +31,12 @@ namespace ECommerce.Api.Search
              * ISearchService. This is going to be implemented right here. Services.AdScoped, ISearchService, 
              * and the concrete implementation is SearchService. */
             services.AddScoped<ISearchService, SearchService>();
+            services.AddScoped<IOrdersService, OrdersService>();
+            // Configure the HTTP client factory object that we're going to use to communicate to the orders microservice
+            services.AddHttpClient("OrdersService", config =>
+            {
+                config.BaseAddress = new Uri(Configuration["Services:Orders"]); // AppSettings.json->Services->Orders
+            });
             services.AddControllers();
         }
 

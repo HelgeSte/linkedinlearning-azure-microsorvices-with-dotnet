@@ -30,6 +30,14 @@ namespace ECommerce.Api.Orders
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddScoped<IOrdersProvider, OrdersProvider>();
+            // invoke the http client method
+            services.AddHttpClient("OrdersService", config =>
+            {
+                // ... so I can read the orders item inside the Services section:
+                config.BaseAddress = new Uri(Configuration["Services:Orders"]);
+                // next is add Order and OrderItem classes to Search/Models
+            });
+            // Are the AutoMapper and DbContext methods needed? Not used in the example:
             services.AddAutoMapper(typeof(Startup));
             services.AddDbContext<OrdersDbContext>(options =>
             {
