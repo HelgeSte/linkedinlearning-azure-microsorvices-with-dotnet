@@ -32,6 +32,7 @@ namespace ECommerce.Api.Search
              * ISearchService. This is going to be implemented right here. Services.AdScoped, ISearchService, 
              * and the concrete implementation is SearchService. */
             services.AddScoped<ISearchService, SearchService>();
+            services.AddScoped<ICustomersService, CustomersService>();
             services.AddScoped<IOrdersService, OrdersService>();
             /* Finally, we need to specify that we're going to use the ProductsService as the concrete implementation 
              * of the IProductsService interface. */
@@ -41,11 +42,14 @@ namespace ECommerce.Api.Search
             {
                 config.BaseAddress = new Uri(Configuration["Services:Orders"]); // AppSettings.json->Services->Orders
             });
-            services.AddHttpClient("ProductService", config =>
+            services.AddHttpClient("ProductsService", config =>
             {
                 config.BaseAddress = new Uri(Configuration["Services:Products"]);
             }).AddTransientHttpErrorPolicy(p => p.WaitAndRetryAsync(5, _ => TimeSpan.FromMilliseconds(500))); // Is prod-srv alive?
-            // Add code to the SearchService, so it can handle situations where the Product Service is down
+            services.AddHttpClient("CustomersService", config =>
+            {
+                config.BaseAddress = new Uri(Configuration["Services:Customers"]);
+            });
             services.AddControllers();
         }
 
