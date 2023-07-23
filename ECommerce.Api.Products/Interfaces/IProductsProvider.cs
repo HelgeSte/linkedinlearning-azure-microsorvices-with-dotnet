@@ -6,8 +6,8 @@ namespace ECommerce.Api.Products.Interfaces
 {
     public interface IProductsProvider
     {
-        Task<(bool isSuccess, IEnumerable<Product> Products, string ErrorMessage)> GetProductsAsync();
-        Task<(bool isSuccess, Product Product, string ErrorMessage)> GetProductAsync(int id);
+        Task<(bool IsSuccess, IEnumerable<Product> Products, string ErrorMessage)> GetProductsAsync();
+        Task<(bool IsSuccess, Product Product, string ErrorMessage)> GetProductAsync(int id);
 
     }
 }

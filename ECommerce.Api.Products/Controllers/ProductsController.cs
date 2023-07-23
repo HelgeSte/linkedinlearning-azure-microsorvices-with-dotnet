@@ -22,7 +22,7 @@ namespace ECommerce.Api.Products.Controllers
         public async Task<IActionResult> GetProductsAsync()
         {
             var result = await productsProvider.GetProductsAsync();
-            if(result.isSuccess)
+            if(result.IsSuccess)
             {
                 return Ok(result.Products);
             }
@@ -33,7 +33,7 @@ namespace ECommerce.Api.Products.Controllers
         public async Task<IActionResult> GetProductAsync(int id)
         {
             var result = await productsProvider.GetProductAsync(id);
-            if(result.isSuccess) // Why is await is needed for isSuccess?
+            if(result.IsSuccess) // Why is await is needed for isSuccess?
             {
                 return Ok(result.Product);
             }
