@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "jSUPXOagxlYIFNr6CxjEGFs3jGNoGbhhTSbRZ3IlN+VXtsQ9mAbTaD/jQOAY3q+9DSKKW97Lb+lAzYrMn7OpVQ==",
+  "dgSpecHash": "a5ZnBJm8MYntFL9IzWbl+1CxQlxzdupls25FbK+xAPtmsaDLsZx+i70jMMGvRlKRSSmIrxkoYBvpe31pxGNp+A==",
   "success": true,
-  "projectFilePath": "C:\\Users\\helge\\source\\repos\\LiL_AzureMicroservices\\ECommerce\\ECommerce.Api.Search\\ECommerce.Api.Search.csproj",
+  "projectFilePath": "C:\\Users\\helge\\source\\repos\\LiL_AzureMicroservices\\linkedinlearning-azure-microsorvices-with-dotnet\\ECommerce.Api.Search\\ECommerce.Api.Search.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\helge\\.nuget\\packages\\microsoft.extensions.configuration\\3.1.0\\microsoft.extensions.configuration.3.1.0.nupkg.sha512",
     "C:\\Users\\helge\\.nuget\\packages\\microsoft.extensions.configuration.abstractions\\3.1.0\\microsoft.extensions.configuration.abstractions.3.1.0.nupkg.sha512",

@@ -427,11 +427,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\helge\\source\\repos\\LiL_AzureMicroservices\\ECommerce\\ECommerce.Api.Search\\ECommerce.Api.Search.csproj",
+      "projectUniqueName": "C:\\Users\\helge\\source\\repos\\LiL_AzureMicroservices\\linkedinlearning-azure-microsorvices-with-dotnet\\ECommerce.Api.Search\\ECommerce.Api.Search.csproj",
       "projectName": "ECommerce.Api.Search",
-      "projectPath": "C:\\Users\\helge\\source\\repos\\LiL_AzureMicroservices\\ECommerce\\ECommerce.Api.Search\\ECommerce.Api.Search.csproj",
+      "projectPath": "C:\\Users\\helge\\source\\repos\\LiL_AzureMicroservices\\linkedinlearning-azure-microsorvices-with-dotnet\\ECommerce.Api.Search\\ECommerce.Api.Search.csproj",
       "packagesPath": "C:\\Users\\helge\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\helge\\source\\repos\\LiL_AzureMicroservices\\ECommerce\\ECommerce.Api.Search\\obj\\",
+      "outputPath": "C:\\Users\\helge\\source\\repos\\LiL_AzureMicroservices\\linkedinlearning-azure-microsorvices-with-dotnet\\ECommerce.Api.Search\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",

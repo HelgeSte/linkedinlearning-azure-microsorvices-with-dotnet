@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "mTTKhJ8z4vdADCZvuQQVa1iyzpSRyMc3cSmDvnVlZfwPONGth19ZqM4cg0CTo0D22Rzw/b4+d+girDFm+sTg6g==",
+  "dgSpecHash": "UP8+me7YtkGy4UCytllYcFO+nwW1RfPETyNt3sImVFkc2KzT8wdqtvfHU/ad/Ro6rllZQrrUxxRASp6x4/32cQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\helge\\source\\repos\\LiL_AzureMicroservices\\ECommerce\\ECommerce.Api.Customers\\ECommerce.Api.Customers.csproj",
+  "projectFilePath": "C:\\Users\\helge\\source\\repos\\LiL_AzureMicroservices\\linkedinlearning-azure-microsorvices-with-dotnet\\ECommerce.Api.Customers\\ECommerce.Api.Customers.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\helge\\.nuget\\packages\\automapper\\9.0.0\\automapper.9.0.0.nupkg.sha512",
     "C:\\Users\\helge\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\7.0.0\\automapper.extensions.microsoft.dependencyinjection.7.0.0.nupkg.sha512",

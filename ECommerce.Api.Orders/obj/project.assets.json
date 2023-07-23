@@ -1616,11 +1616,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\helge\\source\\repos\\LiL_AzureMicroservices\\ECommerce\\ECommerce.Api.Orders\\ECommerce.Api.Orders.csproj",
+      "projectUniqueName": "C:\\Users\\helge\\source\\repos\\LiL_AzureMicroservices\\linkedinlearning-azure-microsorvices-with-dotnet\\ECommerce.Api.Orders\\ECommerce.Api.Orders.csproj",
       "projectName": "ECommerce.Api.Orders",
-      "projectPath": "C:\\Users\\helge\\source\\repos\\LiL_AzureMicroservices\\ECommerce\\ECommerce.Api.Orders\\ECommerce.Api.Orders.csproj",
+      "projectPath": "C:\\Users\\helge\\source\\repos\\LiL_AzureMicroservices\\linkedinlearning-azure-microsorvices-with-dotnet\\ECommerce.Api.Orders\\ECommerce.Api.Orders.csproj",
       "packagesPath": "C:\\Users\\helge\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\helge\\source\\repos\\LiL_AzureMicroservices\\ECommerce\\ECommerce.Api.Orders\\obj\\",
+      "outputPath": "C:\\Users\\helge\\source\\repos\\LiL_AzureMicroservices\\linkedinlearning-azure-microsorvices-with-dotnet\\ECommerce.Api.Orders\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
@@ -1644,11 +1644,11 @@
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
           "projectReferences": {
-            "C:\\Users\\helge\\source\\repos\\LiL_AzureMicroservices\\ECommerce\\ECommerce.Api.Customers\\ECommerce.Api.Customers.csproj": {
-              "projectPath": "C:\\Users\\helge\\source\\repos\\LiL_AzureMicroservices\\ECommerce\\ECommerce.Api.Customers\\ECommerce.Api.Customers.csproj"
+            "C:\\Users\\helge\\source\\repos\\LiL_AzureMicroservices\\linkedinlearning-azure-microsorvices-with-dotnet\\ECommerce.Api.Customers\\ECommerce.Api.Customers.csproj": {
+              "projectPath": "C:\\Users\\helge\\source\\repos\\LiL_AzureMicroservices\\linkedinlearning-azure-microsorvices-with-dotnet\\ECommerce.Api.Customers\\ECommerce.Api.Customers.csproj"
             },
-            "C:\\Users\\helge\\source\\repos\\LiL_AzureMicroservices\\ECommerce\\ECommerce.Api.Products\\ECommerce.Api.Products.csproj": {
-              "projectPath": "C:\\Users\\helge\\source\\repos\\LiL_AzureMicroservices\\ECommerce\\ECommerce.Api.Products\\ECommerce.Api.Products.csproj"
+            "C:\\Users\\helge\\source\\repos\\LiL_AzureMicroservices\\linkedinlearning-azure-microsorvices-with-dotnet\\ECommerce.Api.Products\\ECommerce.Api.Products.csproj": {
+              "projectPath": "C:\\Users\\helge\\source\\repos\\LiL_AzureMicroservices\\linkedinlearning-azure-microsorvices-with-dotnet\\ECommerce.Api.Products\\ECommerce.Api.Products.csproj"
             }
           }
         }
