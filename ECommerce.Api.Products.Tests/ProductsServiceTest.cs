@@ -40,7 +40,7 @@ namespace ECommerce.Api.Products.Tests
                 .UseInMemoryDatabase(nameof(GetProductsReturnsProductUsingValidId))
                 .Options;
             var dbContext = new ProductsDbContext(options);
-            //CreateProducts(dbContext);
+            CreateProducts(dbContext);
 
             var productProfile = new ProductProfile(); //class . {CreateMap<Db.Product,Models.Product>();}
             var configuration = new MapperConfiguration(cfg => cfg.AddProfile(productProfile));
@@ -62,7 +62,7 @@ namespace ECommerce.Api.Products.Tests
                 .UseInMemoryDatabase(nameof(GetProductsReturnsProductUsingValidId))
                 .Options;
             var dbContext = new ProductsDbContext(options);
-            //CreateProducts(dbContext);
+            CreateProducts(dbContext);
 
             var productProfile = new ProductProfile(); //class . {CreateMap<Db.Product,Models.Product>();}
             var configuration = new MapperConfiguration(cfg => cfg.AddProfile(productProfile));
@@ -77,17 +77,24 @@ namespace ECommerce.Api.Products.Tests
 
         private void CreateProducts(ProductsDbContext dbContext)
         {
-            for (int i=1; i<=10; i++)
+            if(dbContext.Products.Any())
             {
-                dbContext.Products.Add(new Product()
+                Console.WriteLine("Not empty, no need to add data");
+            } else
+            {
+                for (int i=1; i<=10; i++)
                 {
-                    Id = i,
-                    Name = Guid.NewGuid().ToString(),
-                    Inventory = i + 10,
-                    Price = (decimal)(i * 3.14)
-                });
+                    dbContext.Products.Add(new Product()
+                    {
+                        Id = i,
+                        Name = Guid.NewGuid().ToString(),
+                        Inventory = i + 10,
+                        Price = (decimal)(i * 3.14)
+                    });
+                }
+                dbContext.SaveChanges();
             }
-            dbContext.SaveChanges();
+            
         }
     }
 }
